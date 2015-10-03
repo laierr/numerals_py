@@ -58,7 +58,7 @@ def hundreds_to_txt(hundred, ten, unit):
 	if ten == 0 and unit == 0:
 		return hundreds[hundred]
 	elif ten == 0:
-		return hundreds[hundred] + " ve"+ units[unit]
+		return hundreds[hundred] + " ve" + units[unit]
 	elif ten == 1:
-		return hundreds[hundred] + " ve"+ units[unit] + "esre"
+		return hundreds[hundred] + " ve" + units[unit] + "esre"
 	return hundreds[hundred] + " " + tens_to_txt(ten, unit)

@@ -33,13 +33,6 @@ class NumeralsTest (unittest.TestCase):
 		self.assertEqual(numerals.number_to_txt(121), "mea esrim veehad")
 
 
-
-
-
-
-
-
-
 def main():
     unittest.main()
 

@@ -37,7 +37,7 @@ hundreds = {
 
 def number_to_txt (numeral):
 	array = list(str(numeral))
-	array = map(lambda x: int(x), array)
+	array = map(int, array)
 
 	if len(array) == 1:
 		return units[numeral]
@@ -53,7 +53,6 @@ def tens_to_txt(ten, unit):
 		return units[unit] + "esre"
 
 	return tens[ten] + " ve" + units[unit]
-
 
 def hundreds_to_txt(hundred, ten, unit):
 	if ten == 0 and unit == 0:

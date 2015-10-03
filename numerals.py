@@ -1,0 +1,4 @@
+def selftest():
+	return True
+
+

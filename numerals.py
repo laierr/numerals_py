@@ -43,6 +43,8 @@ def number_to_txt (numeral):
 		return units[numeral]
 	elif len(array) == 2:
 		return tens_to_txt(array[0], array[1])
+	elif len(array) == 3:
+		return hundreds_to_txt(array[0],array[1],array[2])
 
 def tens_to_txt(ten, unit):
 	if unit == 0:
@@ -50,4 +52,14 @@ def tens_to_txt(ten, unit):
 	elif ten == 1:
 		return units[unit] + "esre"
 
-	return tens[ten] + " ve"+ units[unit]
+	return tens[ten] + " ve" + units[unit]
+
+
+def hundreds_to_txt(hundred, ten, unit):
+	if ten == 0 and unit == 0:
+		return hundreds[hundred]
+	elif ten == 0:
+		return hundreds[hundred] + " ve"+ units[unit]
+	elif ten == 1:
+		return hundreds[hundred] + " ve"+ units[unit] + "esre"
+	return hundreds[hundred] + " " + tens_to_txt(ten, unit)

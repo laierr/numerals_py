@@ -42,9 +42,9 @@ def number_to_txt (numeral):
 	if len(array) == 1:		# 0 - 9
 		return units[numeral]
 	elif len(array) == 2:	# 10 - 99
-		return tens_to_txt(array[0], array[1])
+		return tens_to_txt(*array)
 	elif len(array) == 3:	# 100 - 999
-		return hundreds_to_txt(array[0], array[1], array[2])
+		return hundreds_to_txt(*array)
 
 def tens_to_txt(ten, unit):
 	if unit == 0:						# 10, 20, 30, etc.

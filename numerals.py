@@ -36,7 +36,7 @@ hundreds = {
 }
 
 def number_to_txt (numeral):
-											# convert incoming number to array of digits:
+	# convert incoming number to array of digits:
 	array = map(int, list(str(numeral)))	# *numeral* >> to string >> split to array >> map as integers
 
 	if len(array) == 1:		# 0 - 9

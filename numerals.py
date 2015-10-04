@@ -36,29 +36,30 @@ hundreds = {
 }
 
 def number_to_txt (numeral):
-	array = list(str(numeral))
-	array = map(int, array)
+											# convert incoming number to array of digits:
+	array = map(int, list(str(numeral)))	# *numeral* >> to string >> split to array >> map as integers
 
-	if len(array) == 1:
+	if len(array) == 1:		# 0 - 9
 		return units[numeral]
-	elif len(array) == 2:
+	elif len(array) == 2:	# 10 - 99
 		return tens_to_txt(array[0], array[1])
-	elif len(array) == 3:
-		return hundreds_to_txt(array[0],array[1],array[2])
+	elif len(array) == 3:	# 100 - 999
+		return hundreds_to_txt(array[0], array[1], array[2])
 
 def tens_to_txt(ten, unit):
-	if unit == 0:
+	if unit == 0:						# 10, 20, 30, etc.
 		return tens[ten]
-	elif ten == 1:
-		return units[unit] + "esre"
+	elif ten == 1:						# 11-19
+		return units[unit] + "esre"	
 
-	return tens[ten] + " ve" + units[unit]
+	return tens[ten] + " ve" + units[unit] # everything else
 
 def hundreds_to_txt(hundred, ten, unit):
-	if ten == 0 and unit == 0:
+	if ten == 0 and unit == 0:			# 100, 200, 300, etc.
 		return hundreds[hundred]
-	elif ten == 0:
-		return hundreds[hundred] + " ve" + units[unit]
-	elif ten == 1:
-		return hundreds[hundred] + " ve" + units[unit] + "esre"
-	return hundreds[hundred] + " " + tens_to_txt(ten, unit)
+	elif ten == 0:						# 101, 202, 403, 804, etc.
+		return hundreds[hundred] + " ve" + units[unit]	
+	elif ten == 1:						# x11-x19 
+		return hundreds[hundred] + " ve" + units[unit] + "esre" 
+
+	return hundreds[hundred] + " " + tens_to_txt(ten, unit)	#everything else
